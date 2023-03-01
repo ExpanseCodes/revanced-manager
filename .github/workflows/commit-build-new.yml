@@ -1,5 +1,4 @@
 name: Android Release
-
 on:
   push:
     branches:
@@ -121,3 +120,6 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: android-release
+
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
