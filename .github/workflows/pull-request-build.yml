@@ -3,7 +3,7 @@ name: "Android CI PR Build"
 on:
   pull_request:
     branches:
-      - "**"
+      - ["dev"]
 
 jobs:
   release:
