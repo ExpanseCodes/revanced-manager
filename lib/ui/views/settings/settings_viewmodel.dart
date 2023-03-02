@@ -101,7 +101,7 @@ class SettingsViewModel extends BaseViewModel {
         _toast.showBottom('settingsView.importedPatches');
       }
     } on Exception catch (e, s) {
-      await Sentry.captureException(e, stackTrace: s);
+       
       _toast.showBottom('settingsView.jsonSelectorErrorMessage');
     }
   }

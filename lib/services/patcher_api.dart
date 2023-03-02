@@ -50,7 +50,7 @@ class PatcherAPI {
         _patches = await _managerAPI.getPatches();
       }
     } on Exception catch (e, s) {
-      await Sentry.captureException(e, stackTrace: s);
+       
       _patches = List.empty();
     }
   }
@@ -92,7 +92,7 @@ class PatcherAPI {
             }
           }
         } on Exception catch (e, s) {
-          await Sentry.captureException(e, stackTrace: s);
+           
           continue;
         }
       }
@@ -171,7 +171,7 @@ class PatcherAPI {
       }
       return originalFilePath;
     } on Exception catch (e, s) {
-      await Sentry.captureException(e, stackTrace: s);
+       
       return originalFilePath;
     }
   }
@@ -194,7 +194,7 @@ class PatcherAPI {
           selectedPatches.add(settingsPatch);
         }
       } on Exception catch (e, s) {
-        await Sentry.captureException(e, stackTrace: s);
+         
         // ignore
       }
     }
@@ -235,7 +235,7 @@ class PatcherAPI {
         if (kDebugMode) {
           print(e);
         }
-        throw await Sentry.captureException(e, stackTrace: s);
+        throw  
       }
     }
   }
@@ -257,7 +257,7 @@ class PatcherAPI {
           return await DeviceApps.isAppInstalled(patchedApp.packageName);
         }
       } on Exception catch (e, s) {
-        await Sentry.captureException(e, stackTrace: s);
+         
         return false;
       }
     }

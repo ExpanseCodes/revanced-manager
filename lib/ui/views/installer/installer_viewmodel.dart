@@ -57,7 +57,7 @@ class InstallerViewModel extends BaseViewModel {
           ),
         ).then((value) => FlutterBackground.enableBackgroundExecution());
       } on Exception catch (e, s) {
-        await Sentry.captureException(e, stackTrace: s);
+         
         // ignore
       }
     }
@@ -137,8 +137,8 @@ class InstallerViewModel extends BaseViewModel {
             'Aborting...',
             'An error occurred! Aborting\nError:\n$e',
           );
-          await Sentry.captureException(e, stackTrace: s);
-          throw await Sentry.captureException(e, stackTrace: s);
+           
+          throw  
         }
       } else {
         update(-100.0, 'Aborting...', 'No app or patches selected! Aborting');
@@ -147,13 +147,13 @@ class InstallerViewModel extends BaseViewModel {
         try {
           FlutterBackground.disableBackgroundExecution();
         } on Exception catch (e, s) {
-          await Sentry.captureException(e, stackTrace: s);
+           
           // ignore
         }
       }
       await Wakelock.disable();
     } on Exception catch (e, s) {
-      await Sentry.captureException(e, stackTrace: s);
+       
     }
   }
 
@@ -212,7 +212,7 @@ class InstallerViewModel extends BaseViewModel {
         }
       }
     } on Exception catch (e, s) {
-      await Sentry.captureException(e, stackTrace: s);
+       
     }
   }
 
@@ -243,7 +243,7 @@ class InstallerViewModel extends BaseViewModel {
       locator<PatcherViewModel>().selectedPatches.clear();
       locator<PatcherViewModel>().notifyListeners();
     } on Exception catch (e, s) {
-      await Sentry.captureException(e, stackTrace: s);
+       
     }
   }
 
