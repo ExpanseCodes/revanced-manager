@@ -78,11 +78,6 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Set environment variables
-        run: echo $SECRETS | base64 -d > lib/utils/environment.dart
-        env:
-          SECRETS: ${{ secrets.SECRETS }}
-
       - name: Get dependencies
         run: flutter pub get
 
@@ -116,16 +111,16 @@ jobs:
           name: revanced-manager-${{ env.RELEASE_VERSION }}
           path: revanced-manager-${{ env.RELEASE_VERSION }}.apk
 
-  deploy:
-    name: Deploy Android Build
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Get Android Build from artifacts
-      uses: actions/download-artifact@v2
-      with:
-        name: android-release
+  # deploy:
+  #   name: Deploy Android Build
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v1
+  #   - name: Get Android Build from artifacts
+  #     uses: actions/download-artifact@v2
+  #     with:
+  #       name: android-release
 
 env:
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
