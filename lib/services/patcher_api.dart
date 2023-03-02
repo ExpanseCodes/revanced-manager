@@ -235,7 +235,6 @@ class PatcherAPI {
         if (kDebugMode) {
           print(e);
         }
-        throw  
       }
     }
   }

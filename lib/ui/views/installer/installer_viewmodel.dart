@@ -138,8 +138,7 @@ class InstallerViewModel extends BaseViewModel {
             'An error occurred! Aborting\nError:\n$e',
           );
            
-          throw  
-        }
+      }
       } else {
         update(-100.0, 'Aborting...', 'No app or patches selected! Aborting');
       }
